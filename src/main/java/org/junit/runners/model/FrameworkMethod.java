@@ -167,7 +167,10 @@ public class FrameworkMethod extends FrameworkMember<FrameworkMethod> {
         if (!FrameworkMethod.class.isInstance(obj)) {
             return false;
         }
-        return ((FrameworkMethod) obj).method.equals(method);
+        if (obj == null)
+            return false;
+        else
+            return ((FrameworkMethod) obj).method.equals(method);
     }
 
     @Override
